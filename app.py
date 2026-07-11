@@ -136,8 +136,8 @@ scaler = StandardScaler()
 scaled_data = scaler.fit_transform(longevity_data_num)
 
 longevity_scaled_data = pd.DataFrame(longevity_data_predict, columns=longevity_data_num.columns)
-display(longevity_scaled_data.describe().T)
-display(longevity_scaled_data.corr())
+st.dataframe(longevity_scaled_data.describe().T)
+st.dataframe(longevity_scaled_data.corr())
 
 longevity_data_catg_dum = pd.DataFrame()
 for c in longevity_data_cat.columns:
