@@ -1,5 +1,5 @@
 ---
-title: My Predictive Model
+title: Longevity Model
 emoji: 🚀
 colorFrom: blue
 colorTo: indigo
