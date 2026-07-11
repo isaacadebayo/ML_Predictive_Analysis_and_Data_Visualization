@@ -158,8 +158,6 @@ longevity_data_catg_dum.info()
 
 longevity_prediction = pd.concat([longevity_scaled_data, longevity_data_catg_dum], axis=1)
 
-#! pip install xgboost
-
 import xgboost as xgb
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
@@ -292,8 +290,6 @@ features_rf = importances.index
 longevity_prediction_pars = longevity_prediction[ features_rf ]
 importances
 
-#! pip install statsmodels
-
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 import statsmodels.api as sm
 
@@ -413,10 +409,6 @@ for name, (model, param_grid) in param_grids.items():
 # end
 
 results
-
-#! pip install tensorflow --upgrade
-
-#! pip install keras --upgrade
 
 from keras.models import Sequential
 from keras.layers import *
