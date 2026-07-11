@@ -12,11 +12,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from google.colab import drive
-drive.mount('/content/drive')
 
 # reading data
-data = pd.read_csv('/content/drive/MyDrive/life_expectancy.csv')
+data = pd.read_csv('life_expectancy.csv')
 data.head()
 
 data_drop_corruption = data.copy()
