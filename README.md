@@ -1,3 +1,14 @@
+---
+title: My Predictive Model
+emoji: 🚀
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_versionn: 1.35.0
+app_file: app.py
+pinned: false
+---
+
 Research work on factors affecting longevity
 
 Ran multiple predictive modeling using using different regression model to evaluate factors that drive longevity
