@@ -188,7 +188,7 @@ for m in models:
 
     cv_scores = -cross_val_score(m, longevity_prediction, y, cv=kf, scoring='neg_mean_absolute_percentage_error')
     cv_scores = pd.DataFrame(cv_scores)
-    display(cv_scores.describe().T)
+    st.dataframe(cv_scores.describe().T)
 
     print()
 
@@ -860,15 +860,15 @@ predicted_results_df.info()
 # Filter predicted_results_df for 'Countries' to see all its entries in the test set
 countries_predictions_corrected = predicted_results_df[predicted_results_df['Country Name'] == 'Germany'].sort_values(by='Year')
 print("Country entries in the corrected predicted_results_df (from original csv dataset):")
-display(countries_predictions_corrected)
+st.dataframe(countries_predictions_corrected)
 
 # Display the specific entry for Countries in 2014 from the original data_drop
 print("\nLife Expectancy for random country in 2014 from original data_drop:")
-display(data_drop[(data_drop['Country Name'] == 'Germany') & (data_drop['Year'] == 2016)])
+st.dataframe(data_drop[(data_drop['Country Name'] == 'Germany') & (data_drop['Year'] == 2016)])
 
 # Display all data_drop entries with Life Expectancy around 45.100
 print("\nAll data_drop entries with Life Expectancy around 45.100:")
-display(data_drop[data_drop['Life Expectancy World Bank'].between(45.0, 45.2)])
+st.dataframe(data_drop[data_drop['Life Expectancy World Bank'].between(45.0, 45.2)])
 
 # Get the original indices from y_test (which was used to create predicted_results_df)
 original_indices = y_test.index
@@ -883,8 +883,7 @@ predicted_results_df = predicted_results_df[['Country Name', 'Year','Actual Life
 
 # Display the updated DataFrame
 display(predicted_results_df.head())
-
-#! pip install shap
+st.dataframe(predicted_results_df.head())
 
 import shap
 
