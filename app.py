@@ -532,4 +532,3 @@ if st.session_state.get("shap_values") is not None:
     plt.close()
 else:
     st.info("Click **Compute SHAP values** to explain the selected model's predictions.")
-ity_prediction_test)
