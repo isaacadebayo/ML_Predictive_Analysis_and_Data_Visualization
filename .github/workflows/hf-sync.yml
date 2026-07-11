@@ -1,0 +1,22 @@
+name: Sync to Hugging Face Hub
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Push to Hub
+        uses: huggingface/hub-sync@v0.1.0
+        with:
+          github_repo_id: ${{ github.repository }}
+          huggingface_repo_id: IsaacAdebayo/your-space-name  # <-- Replace with your HF username and Space name
+          hf_token: ${{ secrets.HF_TOKEN }}
